@@ -1,0 +1,110 @@
+:root {
+  --teal: #14b8a6; 
+  --shadow: 0 8px 25px rgba(0,0,0,0.15);
+  --card: 20px; 
+  --radius: 12px; 
+  --pad: 24px;
+}
+
+* {box-sizing: border-box}
+body,h1,h2,h3,h4,h5,h6 {font-family: Raleway, sans-serif}
+
+/* Navbar */
+.navbar {position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.98); 
+         backdrop-filter: blur(20px); box-shadow: var(--shadow); padding: 1rem 2rem; transition: all 0.3s ease}
+.navbar.scrolled {padding: 0.5rem 2rem}
+
+/* Logo, nav links, CTA button */
+.logo-link {color: var(--teal) !important; font-weight: 700 !important; font-size: 1.2em !important}
+.nav-link {color: inherit !important}
+.cta-button {background: var(--teal) !important; color: white !important}
+
+/* Hero section */
+.hero {min-height: 100vh; background: linear-gradient(135deg, rgba(20,184,166,0.9), rgba(59,130,246,0.8)); 
+       display: flex; align-items: center; padding-top: 70px; position: relative}
+.hero::before {content: ''; position: absolute; inset: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>')}
+.hero-card {background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-radius: var(--card); 
+            box-shadow: var(--shadow); margin: 2rem auto; max-width: 500px; padding: var(--pad); 
+            border: 1px solid rgba(255,255,255,0.3); animation: slideUp 0.8s ease-out}
+
+/* Hero text */
+.hero-title {color: var(--teal) !important; text-align: center !important; margin-bottom: 1rem !important; font-size: 2.5rem !important}
+.hero-subtitle {text-align: center !important; color: #333 !important; margin-bottom: 2rem !important; font-size: 1.1rem !important}
+
+/* Animations */
+@keyframes slideUp {from {opacity: 0; transform: translateY(30px)} to {opacity: 1; transform: translateY(0)}}
+
+/* Tiles */
+.tile {background: white; border-radius: var(--radius); box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+       transition: all 0.3s cubic-bezier(0.4,0,0.2,1); overflow: hidden; margin-bottom: 2rem; position: relative}
+.tile:hover {transform: translateY(-8px); box-shadow: var(--shadow)}
+.tile::before {content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--teal); transform: scaleX(0); transition: transform 0.3s ease}
+.tile:hover::before {transform: scaleX(1)}
+.tile-img {width: 100%; height: 200px; object-fit: cover}
+.tile-pad {padding: var(--pad)}
+.tile-icon {font-size: 3rem !important; color: var(--teal) !important; margin-bottom: 1rem !important}
+.tile-price {color: #666 !important; font-size: 1.1rem !important}
+.tile-desc {display: block !important; color: #999 !important}
+
+/* Forms */
+.navbar-spacer {height: 70px}
+.form-g {margin-bottom: 1.5rem}
+.form-l {display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333; font-size: 0.95em}
+.form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 1rem}
+.form-i, .form-s {width: 100%; padding: 1rem 1.2rem; border: 2px solid #e1e5e9; border-radius: 10px; 
+                  font-size: 16px; transition: all 0.3s ease; background: white}
+.form-i:focus, .form-s:focus {outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(20,184,166,0.1)}
+.error-msg {color: #ef4444 !important; display: none !important}
+
+/* Buttons */
+.btn-teal {background: linear-gradient(135deg, var(--teal), #0d9488); color: white; border: none; 
+            padding: 1rem 1.5rem; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; position: relative; overflow: hidden}
+.btn-small {font-size: 0.9rem !important; margin-top: 0.5rem !important; width: auto !important; display: inline-block !important}
+.btn-teal:hover:not(:disabled) {transform: translateY(-2px); box-shadow: var(--shadow)}
+.btn-teal:active {transform: translateY(0)}
+.btn-teal:disabled {opacity: 0.6; cursor: not-allowed}
+
+/* Mobile menu */
+.mobile-menu {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
+               background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); 
+               transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); 
+               z-index: 1001; padding: 80px 2rem 2rem; display: flex; flex-direction: column; gap: 1rem}
+.mobile-menu.show {transform: translateX(0)}
+.menu-link {font-size: 1.2rem !important; padding: 1rem !important; text-align: center !important; border-radius: 10px !important; transition: all 0.2s ease !important}
+.menu-link:hover {background: rgba(20,184,166,0.1) !important}
+
+/* Sections */
+.section {padding: 4rem 2rem; max-width: 1400px; margin: auto}
+.property-section {background: #f5f5f5}
+.section-title {text-align: center !important; color: var(--teal) !important; font-size: 2.5rem !important; margin-bottom: 3rem !important}
+
+/* Property cards */
+.property-title {margin: 0 0 0.5rem 0 !important}
+.property-price {color: var(--teal) !important; font-weight: 700 !important}
+.property-features {margin: 0.5rem 0 !important}
+.feature-icon {color: #10b981 !important}
+
+/* Agent cards */
+.agent-photo {width: 80px !important; height: 80px !important; border-radius: 50% !important; margin-bottom: 1rem !important}
+.agent-role {color: #666 !important}
+.agent-phone {font-weight: 600 !important; color: var(--teal) !important; font-size: 1.1em !important; margin-top: 0.5rem !important}
+
+/* FIXED CONTACT SECTION - White cards with green text/icons */
+#contact {background: var(--teal) !important}
+#contact .section-title {color: white !important}
+.contact-tile {background: white !important; color: var(--teal) !important}
+.contact-icon {font-size: 3rem !important; color: var(--teal) !important; margin-bottom: 1rem !important}
+#contact h4 {color: var(--teal) !important}
+#contact p {color: var(--teal) !important}
+#contact small {color: var(--teal) !important; opacity: 0.9 !important}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hero {padding-top: 60px}
+  .navbar {padding: 1rem 1rem}
+  .navbar.scrolled {padding: 0.75rem 1rem}
+  .section-title {font-size: 2rem !important}
+  .hero-card {margin: 1rem !important; padding: 1.5rem !important}
+  .form-row {grid-template-columns: 1fr; gap: 1rem}
+  .hero-title {font-size: 2rem !important}
+}
