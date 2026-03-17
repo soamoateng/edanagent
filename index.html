@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Edanagent</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ghana rentals: single rooms, chamber & hall, apartments">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar w3-large" id="navbar">
+  <div style="max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center">
+    <a href="#home" class="w3-button logo-link">Edanagent</a>
+    <div class="w3-right w3-hide-small" id="desktop-menu">
+      <a href="#types" class="w3-button nav-link">Types</a>
+      <a href="#properties" class="w3-button nav-link">Listings</a>
+      <a href="#agents" class="w3-button nav-link">Agents</a>
+      <a href="#contact" class="w3-button cta-button">Contact us</a>
+    </div>
+    <button class="w3-button w3-hide-large w3-large hamburger-btn" id="hamburger-btn"
+            aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+  <button id="menu-close-btn" aria-label="Close menu">×</button>
+  <a href="#types" class="w3-button menu-link">Types</a>
+  <a href="#properties" class="w3-button menu-link">Listings</a>
+  <a href="#agents" class="w3-button menu-link">Agents</a>
+  <a href="#contact" class="w3-button cta-button menu-link">Contact us</a>
+</div>
+<div class="navbar-spacer"></div>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+  <div class="hero-card">
+    <h1 class="hero-title">Find Your Rental</h1>
+    <p class="hero-subtitle">Single rooms • Chamber & hall • Apartments across Ghana</p>
+    <form action="/search" id="searchForm" novalidate>
+      <div class="form-g">
+        <label class="form-l" for="location">Location</label>
+        <select id="location" class="form-s" name="location" required aria-describedby="location-error">
+          <option value="">Select location</option>
+          <option value="ahodwo">Ahodwo</option>
+          <option value="adum">Adum</option>
+          <option value="asokwa">Asokwa</option>
+        </select>
+        <small id="location-error" class="error-msg">Please select a location</small>
+      </div>
+      <div class="form-row">
+        <div class="form-g">
+          <label class="form-l" for="type">Type</label>
+          <select id="type" class="form-s" name="type">
+            <option value="all">All</option>
+            <option value="single">Single Room</option>
+            <option value="ch">Chamber & Hall</option>
+            <option value="apt">Apartment</option>
+          </select>
+        </div>
+        <div class="form-g">
+          <label class="form-l" for="budget">Budget</label>
+          <select id="budget" class="form-s" name="budget">
+            <option value="all">All budgets</option>
+            <option value="low">₵500-₵3,500</option>
+            <option value="high">₵3,500+</option>
+          </select>
+        </div>
+      </div>
+      <button type="button" class="btn-teal" id="searchBtn" onclick="window.location.href='#properties'">
+        <i class="fa fa-search"></i> Search Properties
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- RENTAL TYPES -->
+<section id="types" class="w3-container section">
+  <h2 class="section-title">Rental Types</h2>
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <div class="tile">
+        <div class="tile-pad w3-center">
+          <i class="fa fa-door-open tile-icon"></i>
+          <h3>Single Room</h3>
+          <p class="tile-price">₵500-1,500 <small class="tile-desc">Perfect for students</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="tile">
+        <div class="tile-pad w3-center">
+          <i class="fa fa-couch tile-icon"></i>
+          <h3>Chamber & Hall</h3>
+          <p class="tile-price">₵1,200-2,500 <small class="tile-desc">Family starter</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="tile">
+        <div class="tile-pad w3-center">
+          <i class="fa fa-building tile-icon"></i>
+          <h3>Apartments</h3>
+          <p class="tile-price">₵2,500+ <small class="tile-desc">Modern living</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROPERTIES -->
+<section id="properties" class="w3-container section property-section">
+  <h2 class="section-title">Featured Properties</h2>
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <div class="tile">
+        <img src="img/Asokwa-Single-Room.jpg" class="tile-img" alt="Asokwa Single Room" loading="lazy">
+        <div class="tile-pad">
+          <h4 class="property-title">Asokwa Single Room</h4>
+          <h4><span class="property-price">₵950/m</span></h4>
+          <p class="property-features"><i class="fa fa-check feature-icon"></i> Self-contained | Water 24/7</p>
+          <button class="btn-teal btn-small" onclick="window.location.href='#contact'"><i class="fa fa-eye"></i> View Details</button>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="tile">
+        <img src="img/Adum-Chamber-and-Hall.jpg" class="tile-img" alt="Adum Chamber & Hall" loading="lazy">
+        <div class="tile-pad">
+          <h4 class="property-title">Adum Chamber & Hall</h4>
+          <h4><span class="property-price">₵1,800/m</span></h4>
+          <p class="property-features"><i class="fa fa-check feature-icon"></i> Near market | Secure</p>
+          <button class="btn-teal btn-small" onclick="window.location.href='#contact'"><i class="fa fa-eye"></i> View Details</button>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="tile">
+        <img src="img/Ahodwo-2-Bed-Rooms-Apartment.jpg" class="tile-img" alt="Ahodwo2 Bed Rooms Apartment" loading="lazy">
+        <div class="tile-pad">
+          <h4 class="property-title">Ahodwo 2 Bed Rooms Apartment</h4>
+          <h4><span class="property-price">₵3,200/m</span></h4>
+          <p class="property-features"><i class="fa fa-check feature-icon"></i> Ensuite | Generator</p>
+          <button class="btn-teal btn-small" onclick="window.location.href='#contact'"><i class="fa fa-eye"></i> View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENTS SECTION -->
+<section id="agents" class="w3-container section">
+  <h2 class="section-title">Trusted Agents</h2>
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <div class="tile">
+        <div class="tile-pad w3-center">
+          <img src="img/Ama-Larbi.jpg" class="agent-photo" alt="Ama Larbi" loading="lazy">
+          <h4>Ama Larbi</h4>
+          <h5 class="agent-role">Asokwa Agent</h5>
+          <h5 class="agent-phone"><i class="fa fa-phone"></i> 054xxxxxxx</h5>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="tile">
+        <div class="tile-pad w3-center">
+          <img src="img/Kwame-Owusu.jpg" class="agent-photo" alt="Kwame Owusu" loading="lazy">
+          <h4>Kwame Owusu</h4>
+          <h5 class="agent-role">Adum Agent</h5>
+          <h5 class="agent-phone"><i class="fa fa-phone"></i> 020xxxxxxx</h5>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="tile">
+        <div class="tile-pad w3-center">
+          <img src="img/Victor-Asante.jpg" class="agent-photo" alt="Victor Asante" loading="lazy">
+          <h4>Victor Asante</h4>
+          <h5 class="agent-role">Ahodwo Agent</h5>
+          <h5 class="agent-phone"><i class="fa fa-phone"></i> 056xxxxxxx</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="w3-container section">
+  <h2 class="section-title">Get In Touch</h2>
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <div class="tile contact-tile">
+        <div class="tile-pad w3-center">
+          <i class="fab fa-whatsapp-square contact-icon"></i>
+          <h4>WhatsApp</h4>
+          <h5>Instant response </h5>
+            <h5>+233205448253</h5>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="tile contact-tile">
+        <div class="tile-pad w3-center">
+          <i class="fa fa-clock contact-icon"></i>
+          <h4>Work Hours</h4>
+          <h5>Monday - Saturday</h5>
+          <h5>8:00AM - 8:00PM</h5>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="tile contact-tile">
+        <div class="tile-pad w3-center">
+          <i class="fa fa-envelope contact-icon"></i>
+          <h4>Email Us</h4>
+          <h5>24hr response</h5>
+          <h5>helloamoateng@gmail.com</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script src="js/app.js"></script>
+</body>
+</html>
